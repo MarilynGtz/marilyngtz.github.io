@@ -1,0 +1,439 @@
+ body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(8, 2, 8);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    display: block;
+    padding: 10px 20px;
+    color: rgb(255, 0, 149);
+    background-color: rgb(19, 4, 19);
+    border-bottom: 1px solid rgb(255, 0, 149);
+    width: calc(100% - 40px); /* Subtracts padding (20px on each side) */
+    margin: 0 auto; /* Centers the section */
+    /*outline-color: rgb(207, 150, 253);
+    outline-width: 20px; */
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+html, body {
+    height: 100%; /* Ensures full-page height */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(19, 4, 19);
+    color: rgb(255, 0, 149);
+}
+
+
+footer {
+    color: rgb(167, 80, 248);
+    padding: 40px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+}
+
+/*footer icons*/ 
+.social-icons{
+    font-size: 1.5em;
+}
+
+.container {
+    max-width: calc(100% - 2.5in); /* Full width minus 2 inches on both sides */
+    margin: 0 auto; /* Center the container */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 20px;
+   /* padding: 0 20px; /* Match the padding of the .sticky-header */
+}
+
+
+.sticky-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(255, 0, 149);
+    background-color: rgb(19, 4, 19);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px; /* Add space under the header */
+}
+
+
+/*marilyn gtz header */
+.typewriter{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: rgb(255, 0, 149);
+    text-align: left;
+    overflow: hidden; /*hides text until animation runs */
+    border-right: .90em solid rgb(255, 0, 149); /*creates cursor effect*/
+    white-space: normal;
+    display: inline-block;
+    animation: typing 6s steps(11, end), blink-caret .90s step-end infinite;
+    font-size: 1.5em;
+    margin-right: auto;
+}
+
+.menu-container {
+    display: flex; /* Enable flexbox layout */
+    justify-content: flex-end; /* Align the items to the right */
+    align-items: center; /* Center the items vertically within the container */
+    padding: 5px 10px;
+    background-color: rgb(19, 4, 19); /* Set the background color for the menu */
+    color: rgb(255, 0, 149);
+    box-sizing: border-box;
+    /* height: 1vh;  Full height of the viewport */
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it's above other content */
+}
+/* Resize icons */
+.menu-container a i {
+    font-size: 1.5rem; 
+}
+
+.menu-container a {
+    color: rgb(255, 0, 149); /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding around each link */
+    margin: 0 10px; /* Add horizontal margin to create space between icons */
+    display: flex; /* Make the link a flex container */
+    align-items: center; /* Center the icon and text vertically */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    font-size: 1.5rem;
+
+}
+
+.menu-container a:hover {
+    background-color: #e48be4; 
+}
+
+.menu-container a.active {
+    background-color: #ff0095; /* Highlight the active link */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center align the links */
+    }
+}
+
+
+/*helloWorld*/
+.typewriter-hello {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    color: rgb(255, 0, 149);
+    overflow: hidden; /* Hides text until animation runs */
+    border-right: .55em solid rgb(255, 0, 149); /* Creates cursor effect */
+    line-height: 1em;
+    white-space: nowrap;
+    display: none;
+    animation: typing 5s steps(10, end), blink-caret .75s step-end infinite; 
+    font-size: 6em;
+    animation-fill-mode: forwards;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    z-index: 2; /* Higher z-index to be above the image */
+    position: relative; /* Ensure it stays in the normal document flow */
+    
+}
+.typewriter-world {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    color: rgb(255, 0, 149);
+    overflow: hidden; /* Hides text until animation runs */
+    border-right: .55em solid rgb(255, 0, 149); /* Creates cursor effect */
+    line-height: 1em;
+    white-space: nowrap;
+    display: none;
+    animation: typing 5s steps(10, end), blink-caret .75s step-end infinite; 
+    font-size: 6em;
+    animation-fill-mode: forwards;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    z-index: 2; /* Higher z-index to be above the image */
+    position: relative; /* Ensure it stays in the normal document flow */
+    
+}
+
+/* Cursor for World */
+.cursor-world {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0.15em;
+    height: 1em;
+    background-color: rgb(255, 0, 149);
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+.code-box {
+    background-color: rgb(29, 27, 27); /* Dark background color for code box */
+    color: rgb(85, 247, 10); /* Light text color */
+    padding: 10px;
+    margin-top: 20px; /* Increase top margin for more space */
+    margin-right: auto;
+    border-radius: 12px;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+    box-shadow: 0 0 10px rgb(255, 0, 170);
+    overflow-x: auto; /* Add horizontal scroll if the code is too long */
+    white-space: pre-wrap; /* Preserve whitespace */
+    display: block; /* Ensure it takes up full width */
+    z-index: 2; /* Higher z-index to be above the image */
+    position: relative; /* Ensure it stays in the normal document flow */
+}
+
+
+.code-box pre {
+    margin: 0;
+}
+
+.code-box code {
+    display: block;
+    line-height: 1.5em;
+}
+
+.code-box code::before {
+    content: attr(data-line-number);
+    display: inline-block;
+    width: 30px; /* Space for line numbers */
+    margin-right: 10px;
+    color: rgb(136, 136, 136); /* Lighter color for line numbers */
+    text-align: left;
+}
+.line-number {
+    color: rgb(147, 36, 221); /* Color for line numbers (e.g., red) */
+}
+
+.code {
+    color: rgb(85, 247, 10); /* Color for code letters (e.g., green) */
+}
+
+img {
+    max-width: 100%; /* Image scales down to fit its container */
+    height: auto;
+  }
+
+#home {
+     background-color: rgb(19, 4, 19); /* Set background color to match the sticky header */
+    padding: 10px 20px; /* Match the padding of the .sticky-header */
+    /* width: 100%; /* Ensure full-width section */
+    width: calc(100% - 40px); /* Adjust the width */
+    margin-bottom: 50px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; /* was using flex-start */
+}
+
+#home-img {
+    max-width: 100%;
+    height: auto; 
+    position: absolute; 
+    right: 0;
+    top: 0;
+    z-index: 0; /* Ensure the image is behind other content had -1*/
+    opacity: 0.6; /* Make the image slightly transparent */
+    filter: sepia(6) saturate(50) hue-rotate(203deg);
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* Stack text and code box vertically */
+    flex: 1; /*to take up remaining space*/
+}
+
+/* Container for slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden; /* Hides overflowing content */
+  }
+  
+  /* Hide all images by default */
+  .slide {
+    display: none;
+  }
+  
+  /* Fade effect */
+  .fade {
+    animation: fade 2s ease-in-out infinite;
+  }
+  
+  /* Keyframes for fading effect */
+  @keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: rgb(255, 0, 149);
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+
+/*typyng animation effect*/
+@keyframes typing-hello {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes typing-world {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: fit-content; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 0, 149); }
+}
+
+
+/* Media Queries */
+
+/* For tablets */
+@media (max-width: 768px) {
+    #home {
+        position: relative;
+    }
+
+    #home-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        opacity: 0.3; /* Increase transparency on smaller screens */
+        transform: translateY(-20%); /* Adjust to be more centered behind content */
+        width: 100%;
+        height: auto;
+    }
+
+    .typewriter-home {
+        font-size: 3em;
+        position: relative;
+        z-index: 1;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header {
+        
+        text-align: center;
+    }
+
+    .code-box {
+        position: relative;
+        z-index: 1;
+        background-color: rgba(29, 27, 27, 0.8); /* Make the code box slightly transparent */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px;
+        font-size: .15em;
+    }
+
+    .typewriter-home {
+        font-size: 3em;
+        position: relative;
+        z-index: 2; /* Ensure text is above the image */
+    }
+
+    .menu-container a {
+        font-size: 0.9rem;
+    }
+
+    .code-box {
+        margin: 10px 0;
+        padding: 10px;
+        position: relative;
+        z-index: 2; /* Ensure code box is above the image */
+        background-color: rgba(29, 27, 27, 0.8); /* Slight transparency */
+    }
+
+    #home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home-img {
+        width: 100%; /* Ensure the image fits within its container */
+        height: auto;
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        /* margin: 0 auto; */
+        z-index: 1; /* Keep the image behind the text and code box */
+        transform: translateY(-20%); /* Adjust positioning */
+        margin: 20px 0;
+        max-width: 100%;
+        opacity: 0.3;
+    }
+}

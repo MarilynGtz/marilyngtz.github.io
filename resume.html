@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    // Function to include footer.html
+    function includeFooter() {
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer').innerHTML = data;
+        });
+    }
+  </script>
+
+</head>
+<body onload="includeFooter()">
+
+  <div id="header-placeholder"></div> 
+
+
+<script>
+    // Load the header HTML dynamically
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
+
+<div class="container">
+
+    <!-- Resume Section -->
+    <section id="resume">
+      <h1>
+     <a href="https://www.linkedin.com/in/marilyngtz" target="_blank" style="color: #f35bac;">www.linkedin.com/in/marilyngtz</a>
+      </h1>
+  
+      <h2>Education</h2>
+      <p><strong>California State University of Stanislaus</strong> - Aug 2022 - May 2024<br>
+      Bachelor of Science in Computer Science</p>
+  
+      <p><strong>Imperial Valley College</strong> - Aug 2019 - Jun 2022<br>
+      Associate of Science in Computer Science</p>
+  
+      <p><strong>Imperial Valley College</strong> - Aug 2019 - Jun 2022<br>
+      Associate of Science in Computer Information Technology</p>
+  
+      <h2>Skills</h2>
+      <ul>
+        <li>Java</li>
+        <li>Visual Basic</li>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Command Line</li>
+        <li>Android</li>
+      </ul>
+  
+      <h2>Relevant Coursework</h2>
+      <ul>
+        <li>Intro to Programming in Java</li>
+        <li>Intro to Data Structures</li>
+        <li>Intro to Info Systems</li>
+        <li>Intro to Cybersecurity</li>
+        <li>Digital Forensics</li>
+        <li>Programming in C++</li>
+        <li>Computer Graphics - Photoshop</li>
+        <li>Statistics</li>
+        <li>Data Structures and Algorithms</li>
+        <li>Android Development</li>
+        <li>Artificial Intelligence</li>
+        <li>Ecommerce Systems Design</li>
+        <li>Operating Systems</li>
+        <li>Cybersecurity Fundamentals</li>
+        <li>Communication Networks</li>
+        <li>Automata Theory</li>
+      </ul>
+  
+      <h2>Engineering Projects</h2>
+      <p><strong>AI Assistant (2023)</strong><br>
+      Developed an AI assistant named MENTA using Python, TensorFlow, and speech recognition APIs for audio-to-text conversion. Managed intents and patterns with JSON file structure.</p>
+  
+      <p><strong>E-Commerce Website (2023)</strong><br>
+      Developed an E-Commerce website for a local company using WordPress, HTML, CSS, and JavaScript.</p>
+  
+      <h2>Employment History</h2>
+      <p><strong>Landon Haney Co.</strong> - Riverside, CA<br>
+      <em>Head of Production</em> - June 2016 - Jun 2018</p>
+      <ul>
+        <li>Managed stock and shipping orders for Amazon, increasing sales revenue by ensuring products were always available for purchase.</li>
+        <li>Printed weekly orders of custom logos on microfiber towels before deadlines.</li>
+        <li>Maintained company website photos up to date using Photoshop and edited tutorial videos.</li>
+        <li>Managed inventory of supplies and updated the system.</li>
+        <li>Scheduled freight pickup times, optimizing logistics for faster delivery.</li>
+      </ul>
+  
+      <p><strong>Sterling USA</strong> - Redlands, CA<br>
+      <em>Warehouse Temp</em> - Jan 2015 - May 2016</p>
+      <ul>
+        <li>Performed electrical troubleshooting and repairs on Keurig coffee machines.</li>
+        <li>Used electrical wiring tools and handled troubleshooting tasks.</li>
+      </ul>
+    </section>
+</div>
+  
+   <!-- Footer placeholder -->
+   <div id="footer"></div>
+  
+  
+  </body>
+  </html>
