@@ -27,56 +27,108 @@
 
   <div class="container">
 
-<section id="home">
+<section id="home" class="custom-home">
   
   <div class="content">
   <div class="typewriter-hello" id="cursor-h"> Hello
   </div>
-  <div class="typewriter-world"> World </div>
-  <div class = "code-box">
-    <pre><code>
-      1 def hello_world():
-      2     print("Hello, World!")
-      3
-      4
-      5 hello_world()
-      6
-      7
-      8
-      9
-      10
-        </code></pre>
-  </div>
-  
+  <div class="typewriter-world" > World</div>
+  <br>
   </div>
 </section>
 
-<section id="hero">
+
+
+<section id="hero" class="custom-hero">
   <div class="hero-content">
     <h1>Hello, I'm Marilyn Gutierrez</h1>
-    <p>Computer Science Graduate | Web Developer | Tech Enthusiast</p>
-    <a href="projects.html" class="cta-button">View My Work</a>
+    
   </div>
   <div class="hero-image">
     <img src="/images/me1.jpg" alt="Marilyn Profile">
-    
-    <i class="fa-solid fa-location-dot"> 
-    <p>Merced, California</p></i>
   </div>
+  <p>Computer Science Graduate @Stan State <br>
+    Web Developer | Tech Enthusiast</p>
+
+  
+  <p>
+    <i class="fa-solid fa-location-dot"></i> Merced, California </p>
+    <a href="projects.html" class="cta-button">View My Work</a>
 </section>
 
+<section id="code-box">
+  <div class = "code-box">
+    <pre><code>
+      <span class="line-number">1</span> ''' 
+      <span class="line-number">2</span> Function to navigate to the appropriate 
+      <span class="line-number">3</span> page based on user input
+      <span class="line-number">4</span> '''
+      <span class="line-number">5</span> def navigate_to_page(page):
+      <span class="line-number">6</span>     pages = {
+      <span class="line-number">7</span>         'portfolio': 'portfolio.html',
+      <span class="line-number">8</span>         'resume': 'resume.html',
+      <span class="line-number">9</span>         'skills': 'skills.html',
+      <span class="line-number">10</span>         'contact': 'contact.html'
+      <span class="line-number">11</span>     }
+      <span class="line-number">12</span>     # Returns URL or error message
+      <span class="line-number">13</span>     return pages.get(page, 'Page not found!')  
+      <span class="line-number">14</span>     
+      <span class="line-number">15</span>     # Prompt user for input
+      <span class="line-number">16</span>     user_input = input("Enter page name (e.g., Portfolio, 
+      <span class="line-number">17</span>           Resume, Skills, Contact): ").lower()
+      <span class="line-number">18</span>     redirect_url = navigate_to_page(user_input)
+      <span class="line-number">19</span>     
+      <span class="line-number">20</span>     # Output: Corresponding URL or error message
+      <span class="line-number">21</span>     print(redirect_url)   
+        </code></pre>
+
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="page-input" placeholder="Enter page name (e.g., Portfolio)">
+    <button id="search-button" onclick="goToPage()">Go</button>
+  </div>
+</section>
+<script>
+  function goToPage() {
+    const page = document.getElementById('page-input').value.toLowerCase();
+    let url;
+
+    switch (page) {
+      case 'portfolio':
+        url = 'portfolio.html';
+        break;
+      case 'resume':
+        url = 'resume.html';
+        break;
+      case 'skills':
+        url = 'skills.html';
+        break;
+        case 'contact':
+          url = 'contact.html'
+          break;
+      default:
+        alert('Page not found!'); // Alert if the page is not recognized
+        return; // Exit the function
+    }
+
+    window.location.href = url; // Navigate to the selected page
+  }
+</script>
+
+</section>
 
   <section id="about">
   <h2>About Me</h2>
   <p>Hello Again! I graduated from California State University with a 
     Bachelors in Computer Science in May 2024. I enjoy coding and solving 
-    problems. And learning what I don't know.
+    problems. And learning new things everyday.
 <br>
 <br>
-    On my free time, I always try to improve my programming skills, watching
+    On my free time, I try to improve my programming skills, watching
     tutorials, solving problems on codewars, and working on my personal projects.
-    Other than coding, I like to learn and fix circuit boards by soldering new components. 
-    I also like to spend my time walking my dogs, going on hikes, trying to workout,
+    Other than coding, I like to learn and fix circuit boards by soldering new components and doing the DIY soldering kits. 
+    I also like to spend my time walking my dogs, going on hikes, working out, doing puzzles, coloring,
     being a foodie, and catching up on my TBR list. 
 
   </p>
@@ -101,7 +153,7 @@
     <div class="slide fade">
       <img src="/images/me2.jpg" alt="Me2">
     </div>
-  
+  </div>
 </section>
   </div>
 
