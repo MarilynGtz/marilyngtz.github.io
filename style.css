@@ -1,4 +1,4 @@
- body {
+body {
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(8, 2, 8);
     margin: 0;
@@ -8,10 +8,12 @@
 
 section {
     display: block;
+    border-radius: 50px;
     padding: 10px 20px;
     color: rgb(255, 0, 149);
     background-color: rgb(19, 4, 19);
     border-bottom: 1px solid rgb(255, 0, 149);
+    border-top: 1px solid rgb(255, 0, 149);
     width: calc(100% - 40px); /* Subtracts padding (20px on each side) */
     margin: 0 auto; /* Centers the section */
     /*outline-color: rgb(207, 150, 253);
@@ -28,17 +30,59 @@ html, body {
     padding: 0;
 }
 
+.skills-container, .soft-skills-container, .hobbies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.skill-box, .soft-skill-box, .hobby-box {
+    background-color: #95b5f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.skill-box:hover, .soft-skill-box:hover, .hobby-box:hover {
+    background-color: #eaeaea;
+}
+
+.project-grid {
+    display: flex;                /* Use Flexbox for layout */
+    flex-wrap: wrap;             /* Allow items to wrap onto new lines */
+    gap: 20px;                   /* Space between the project categories */
+}
+
+.project-category {
+    flex: 1 1 calc(50% - 20px);  /* Set width to 50% minus the gap for two columns */
+    box-sizing: border-box;      /* Include padding and border in element's total width and height */
+}
+
+.project-card {
+    border: 1px solid #09ff00;      /* green border */
+    border-radius: 8px;          /* Rounded corners */
+    padding: 16px;               /* Padding inside the card */
+    background-color: #dca1e7;   /* Light background color */
+}
+
+
 header {
+    max-width: calc(100% - 40px); /* Subtract padding from both sides */
+    margin: 0 auto; /* Center the header */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: rgb(19, 4, 19);
     color: rgb(255, 0, 149);
+    box-sizing: border-box;
 }
 
 
 footer {
+    
     color: rgb(167, 80, 248);
     padding: 40px;
     text-align: center;
@@ -46,23 +90,66 @@ footer {
     font-size: 1.2em;
 }
 
+/* General button style for all Call to Action (CTA) buttons */
+.cta-button, .cta-link {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding for the button size */
+    background-color: rgb(206, 61, 158); /* Background color for the button */
+    color: rgb(0, 0, 0); /* Text color */
+    font-weight: bold;
+    text-align: center; /* Center the text inside the button */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background change on hover */
+    font-size: 1rem; /* Font size for the button text */
+    font-family: 'Courier New', Courier, monospace; /* Font style */
+    margin: 10px 0; /* Add margin for spacing */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for button */
+}
+
+/* Hover effect for buttons */
+.cta-button:hover, .cta-link:hover {
+    background-color: rgb(167, 80, 248); /* Change background on hover */
+    color: white; /* Keep text color white on hover */
+}
+
+/* Active state (when clicked) */
+.cta-button:active, .cta-link:active {
+    background-color: rgb(255, 0, 100); /* Darker shade when clicked */
+    transform: scale(0.98); /* Slightly shrink the button when clicked */
+}
+
+
 /*footer icons*/ 
 .social-icons{
     font-size: 1.5em;
 }
 
-.container {
+.header-container {
+    
     max-width: calc(100% - 2.5in); /* Full width minus 2 inches on both sides */
     margin: 0 auto; /* Center the container */
 
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); 
+    gap: 20x;
+}
+
+.container {
+    max-width: calc(100% - 2.5in); /* Full width minus 2 inches on both sides */
+    margin: 0 auto; /* Center the container */
+    padding: 10px 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
+    box-sizing: border-box;
    /* padding: 0 20px; /* Match the padding of the .sticky-header */
 }
 
 
 .sticky-header {
+    border-radius: 30px;
+    border-bottom-style: dotted;
+    border-color: rgb(255, 0, 149);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,12 +176,16 @@ footer {
     border-right: .90em solid rgb(255, 0, 149); /*creates cursor effect*/
     white-space: normal;
     display: inline-block;
-    animation: typing 6s steps(11, end), blink-caret .90s step-end infinite;
-    font-size: 1.5em;
+    animation: typing 13s steps(5, end), blink-caret .90s step-end infinite;
+    font-size: 1.3em;
     margin-right: auto;
+    max-width: 100%;
 }
 
+
 .menu-container {
+    width: 100%;
+    height: auto;
     display: flex; /* Enable flexbox layout */
     justify-content: flex-end; /* Align the items to the right */
     align-items: center; /* Center the items vertically within the container */
@@ -109,7 +200,7 @@ footer {
 }
 /* Resize icons */
 .menu-container a i {
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
 }
 
 .menu-container a {
@@ -132,14 +223,6 @@ footer {
     background-color: #ff0095; /* Highlight the active link */
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .menu-container {
-        flex-direction: column; /* Stack links vertically */
-        align-items: center; /* Center align the links */
-    }
-}
-
 
 /*helloWorld*/
 .typewriter-hello {
@@ -154,13 +237,14 @@ footer {
     line-height: 1em;
     white-space: nowrap;
     display: none;
-    animation: typing 5s steps(10, end), blink-caret .75s step-end infinite; 
-    font-size: 6em;
+    animation: typing 5s steps(4, end), blink-caret .75s step-end infinite; 
+    font-size: 5em;
     animation-fill-mode: forwards;
     margin-right: 20px;
     margin-bottom: 20px;
     z-index: 2; /* Higher z-index to be above the image */
     position: relative; /* Ensure it stays in the normal document flow */
+    
     
 }
 .typewriter-world {
@@ -171,12 +255,12 @@ footer {
     align-items: center;
     color: rgb(255, 0, 149);
     overflow: hidden; /* Hides text until animation runs */
-    border-right: .55em solid rgb(255, 0, 149); /* Creates cursor effect */
+    border-right: .50em solid rgb(255, 0, 149); /* Creates cursor effect */
     line-height: 1em;
-    white-space: nowrap;
+    white-space: normal;
     display: none;
-    animation: typing 5s steps(10, end), blink-caret .75s step-end infinite; 
-    font-size: 6em;
+    animation: typing 5s steps(2, end), blink-caret .75s step-end infinite; 
+    font-size: 5em;
     animation-fill-mode: forwards;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -194,6 +278,10 @@ footer {
     height: 1em;
     background-color: rgb(255, 0, 149);
     animation: blink-caret 0.75s step-end infinite;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .code-box {
@@ -210,8 +298,11 @@ footer {
     display: block; /* Ensure it takes up full width */
     z-index: 2; /* Higher z-index to be above the image */
     position: relative; /* Ensure it stays in the normal document flow */
-}
+    max-width: 100%; /* Image scales down to fit its container */
+    height: auto;
+    align-items: center; /*can remove*/
 
+}
 
 .code-box pre {
     margin: 0;
@@ -238,38 +329,115 @@ footer {
     color: rgb(85, 247, 10); /* Color for code letters (e.g., green) */
 }
 
+/*search box style*/
+.search-box {
+    margin-top: 20px; /* Space above the search box */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the search box */
+}
+
+#page-input {
+    padding: 10px; /* Input padding */
+    font-size: 1em; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border style */
+    margin-right: 10px; /* Space between input and button */
+}
+
+#search-button {
+    padding: 10px 20px; /* Button padding */
+    background-color: #f35bac; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+#search-button:hover {
+    background-color: #e48be4; /* Change color on hover */
+}
+
+
+
 img {
     max-width: 100%; /* Image scales down to fit its container */
-    height: auto;
+  
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
   }
 
+  /*hero image and text */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the button and other content horizontally */
+    justify-content: center; /* Optional: Center the items vertically */
+}
+
+  .hero-image {
+    max-width: 100%; /* Adjust the width */
+ 
+    position: relative;
+  }
+  
+  .hero-image img {
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container */
+  }
+  
+  .hero-image i {
+    margin-top: 10px;
+    position: absolute;
+    top: 10px ;
+    bottom: 10px;
+    right: 10px;
+    font-size: 3rem;
+    color: rgb(236, 126, 203); /* Adjust color as needed */
+  }
+
+  /*
+  .custom-home {
+    width: 50%; /* Adjust the width as needed */
+  /*  height: 300px; /* Adjust the height as needed */
+  /*  margin: 0 auto; /* Center the section */  
+/*} */
+/*
+.custom-hero {
+    width: 90%; /* Adjust the width as needed */
+   /* height: auto; /* Adjust the height as needed */
+  /*  margin: 0 auto; /* Center the section */
+  /*  padding: 20px; /* Add padding to the section */
+  /*  position: relative; /* Ensure absolute positioned elements are positioned relative to this */
+
+/* } */
+
+
+
+
 #home {
-     background-color: rgb(19, 4, 19); /* Set background color to match the sticky header */
+    background-color: rgb(19, 4, 19); /* Set background color to match the sticky header */
     padding: 10px 20px; /* Match the padding of the .sticky-header */
-    /* width: 100%; /* Ensure full-width section */
+   /* width: 100%; /* Ensure full-width section */
     width: calc(100% - 40px); /* Adjust the width */
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     display: flex; 
-    justify-content: space-between;
+    justify-content: center;
     align-items: center; /* was using flex-start */
 }
 
-#home-img {
-    max-width: 100%;
-    height: auto; 
-    position: absolute; 
-    right: 0;
-    top: 0;
-    z-index: 0; /* Ensure the image is behind other content had -1*/
-    opacity: 0.6; /* Make the image slightly transparent */
-    filter: sepia(6) saturate(50) hue-rotate(203deg);
-    padding: 10px;
-}
 
 .content {
-    display: flex;
+    max-width: fit-content;
+    height: auto;
+    display: inline-block;
+    text-align: center;
     flex-direction: column; /* Stack text and code box vertically */
-    flex: 1; /*to take up remaining space*/
+    
 }
 
 /* Container for slideshow */
@@ -278,6 +446,7 @@ img {
     max-width: 100%;
     margin: auto;
     overflow: hidden; /* Hides overflowing content */
+    border-radius: 50px;
   }
   
   /* Hide all images by default */
@@ -312,36 +481,27 @@ h2{
 
 /*typyng animation effect*/
 @keyframes typing-hello {
-    0% {
-        width: 0;
-        opacity: 1;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
+    from { width: 0; }
+    to { width: 10ch; } /* Length of "Hello" */
 }
 
 @keyframes typing-world {
-    0% {
-        width: 0;
-        opacity: 1;
-    }
-    100% {
-        width: 100%;
-        opacity: 1;
-    }
+    from { width: 0; }
+    to { width: 1ch; } /* Length of "World" */
 }
+
 
 @keyframes typing {
     from { width: 0 }
-    to { width: fit-content; }
+    to { width: 100%; }
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: rgb(255, 0, 149); }
 }
+
+
 
 
 /* Media Queries */
@@ -352,18 +512,7 @@ h2{
         position: relative;
     }
 
-    #home-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        opacity: 0.3; /* Increase transparency on smaller screens */
-        transform: translateY(-20%); /* Adjust to be more centered behind content */
-        width: 100%;
-        height: auto;
-    }
-
+   
     .typewriter-home {
         font-size: 3em;
         position: relative;
@@ -379,6 +528,13 @@ h2{
         
         text-align: center;
     }
+.content{
+    max-width: 100%;
+
+}
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* One column for smaller screens */
+    }
 
     .code-box {
         position: relative;
@@ -387,12 +543,25 @@ h2{
     }
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center align the links */
+    }
+}
+
+
 /* For mobile phones */
 @media (max-width: 480px) {
     body {
         padding: 10px;
     }
 
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* One column for smaller screens */
+    }
+    
     header {
         padding: 10px;
         font-size: .15em;
